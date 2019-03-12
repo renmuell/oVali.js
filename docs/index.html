@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oVali.js Demo Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
+    <style type="text/css">
+      html, body {
+        font-family:Arial;
+        margin:0;
+        padding:0;
+      }
+  
+      main {
+        max-width: 90%;
+        padding:20px;
+        width: 1200px;
+        margin:0 auto;
+      }
+  
+      hr {
+        border: none;
+        border-bottom: 1px solid #ccc;
+      }
+  
+      table {
+        border-spacing: 0;
+        width:100%;
+      }
+  
+      table.table {
+        border:1px solid #ccc;
+        border-radius: 10px;
+      }
+
+      table tr {
+        padding:0;
+        margin:0;
+      }
+  
+      table td {
+        vertical-align: top;
+        padding:5px;
+        margin:0;
+        border-bottom: 1px solid #ccc;
+        border-right:  1px solid #ccc;
+      }
+  
+      table th {
+        border-bottom:  none;
+    
+        padding:5px;
+        border-bottom:1px solid #ccc;
+        border-right:1px solid #ccc;
+      }
+  
+      table th:last-child {
+        border-right:  none;
+      }
+  
+      table tr:nth-last-child(2) th {
+        border-bottom:  none;
+      }
+  
+      table td:last-of-type {
+        border-right:  none;
+      }
+  
+      table tr:last-of-type td {
+        border-bottom:  none;
+      }
+  
+      .example {
+        position:relative;
+        width: 100%;
+        height:300px; 
+        overflow:hidden;
+        border-radius: 10px;
+      }
+  
+      pre {
+        border-radius: 10px;
+      }
+  
+      h1, h2, h3, h4 {
+        border-bottom: 1px solid #ccc;
+      }
+  
+    </style>
+    <script src="oVali-min.js"></script>
+</head>
+<body>
+
+    <main>
+        <article>
+            <h1 class="">oVali.js</h1>
+
+            <p>
+                
+            </p>
+
+            <!-- -------------------------------------------------------------------------------- -->
+
+            <h3 >Simple</h3>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="width:50%">
+                            <h4 class="rm_atmo-daytime-color">Usage</h4>
+                            <pre><code class="code_view language-javascript line-numbers" data-code="code_1"></code></pre>
+                        </td>
+                        <td style="width:50%">
+                            <h4 class="rm_atmo-daytime-color">Result</h4>
+                            <pre><code id="example_1" class="language-json line-numbers"></code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <script id="code_1" type="text/javascript">
+                let data = {
+                    name: "Meier"
+                }
+
+                let schema = {
+                    name: "string"
+                }
+
+                let result = oVali.isValid(data, schema)
+            </script>
+            <script>
+                document.getElementById("example_1").innerText = JSON.stringify(result, null, 2);
+             </script>
+
+            <!-- -------------------------------------------------------------------------------- -->
+            <h3 >Fail</h3>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="width:50%"> 
+                            <h4 class="rm_atmo-daytime-color">Usage</h4>
+                            <pre><code class="code_view language-javascript line-numbers" data-code="code_2"></code></pre>
+                        </td>
+                        <td style="width:50%">
+                            <h4 class="rm_atmo-daytime-color">Result</h4>
+                            <pre><code id="example_2" class="language-json line-numbers"></code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <script id="code_2" type="text/javascript">
+                var results_1 = oVali.isValid({
+                    name: 00110100
+                }, {
+                    name: "string"
+                })
+            </script>
+            <script>
+                document.getElementById("example_2").innerText = String(results_1).toString();
+             </script>
+
+
+        </article>
+        <footer>
+            <hr>
+            <br>
+            <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Rene Müller
+            <br><br>
+            This is a private page without profits hosted by GitHub.com. 
+        </footer>
+    </main>
+
+    <script>
+    var elements = document.getElementsByClassName("code_view");
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        element.innerHTML = document.getElementById(element.dataset.code).innerText;
+    }
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script type="text/javascript">
+    // Optional
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+        'remove-indent': true,
+    });
+    </script>
+
+    
+</body>
+</html>

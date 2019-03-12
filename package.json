@@ -1,0 +1,40 @@
+{
+  "name": "ovali-js",
+  "version": "0.0.1",
+  "description": "object Schema validator",
+  "main": "release/oVali-min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "release/oVali-min.js",
+    "release/oVali-min.js.map",
+    "release/oVali.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renmuell/vJson.js.git"
+  },
+  "keywords": [
+    "json"
+  ],
+  "author": "Rene Müller <rene.mueller.code@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renmuell/vJson.js/issues"
+  },
+  "homepage": "https://github.com/renmuell/vJson.js#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-tape": "^1.0.0",
+    "gulp-uglify": "^3.0.1",
+    "nyc": "^13.0.1",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {}
+}
