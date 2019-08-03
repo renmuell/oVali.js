@@ -573,6 +573,12 @@ var oVali = (function(){
         TYPES:TYPES,
 
         /**
+         * 
+         * @public
+         */
+        LITERALS: LITERALS,
+
+        /**
          *  Check object with schema.
          * 
          *  @public
@@ -626,12 +632,31 @@ var oVali = (function(){
 
         /**
          * 
+         * @param {*} json 
+         * @param {*} schema 
+         * @param {*} options 
+         */
+        checkJson: function (json, schema, options) {
+            return oVali.check(JSON.parse(json), schema, options);
+        },
+
+        /**
+         * 
          * @public
          * @param {*} object 
          * @param {*} schema 
          */
         isValid: function (object, schema) {
             return oVali.check(object, schema, {}).length == 0;
+        },
+
+        /**
+         * 
+         * @param {*} json 
+         * @param {*} schema 
+         */
+        isJsonValid: function (json, schema) {
+            return oVali.check(JSON.parse(json), schema, {}).length == 0;
         },
 
         /**
